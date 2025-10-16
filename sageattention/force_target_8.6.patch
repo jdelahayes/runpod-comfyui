@@ -1,0 +1,24 @@
+--- setup.py	2025-10-12 23:22:30.944829100 +0200
++++ setup_jde.py	2025-10-12 23:22:39.893377000 +0200
+@@ -68,13 +68,14 @@
+ 
+ # Iterate over all GPUs on the current machine. Also you can modify this part to specify the architecture if you want to build for specific GPU architectures.
+ compute_capabilities = set()
+-device_count = torch.cuda.device_count()
+-for i in range(device_count):
+-    major, minor = torch.cuda.get_device_capability(i)
+-    if major < 8:
+-        warnings.warn(f"skipping GPU {i} with compute capability {major}.{minor}")
+-        continue
+-    compute_capabilities.add(f"{major}.{minor}")
++# device_count = torch.cuda.device_count()
++# for i in range(device_count):
++#     major, minor = torch.cuda.get_device_capability(i)
++#     if major < 8:
++#         warnings.warn(f"skipping GPU {i} with compute capability {major}.{minor}")
++#         continue
++#     compute_capabilities.add(f"{major}.{minor}")
++compute_capabilities.add("8.6")
+ 
+ nvcc_cuda_version = get_nvcc_cuda_version(CUDA_HOME)
+ if not compute_capabilities:
