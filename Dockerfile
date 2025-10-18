@@ -73,6 +73,7 @@ RUN pip install --no-cache-dir /sageattention/sageattention-2.2.0-cp312-cp312-li
 COPY --chmod=755 comfyui/install_comfyui.sh /install_comfyui.sh
 RUN bash /install_comfyui.sh
 COPY comfyui/extra_model_paths.yaml /opt/ComfyUI/extra_model_paths.yaml
+COPY comfyui/extra_args.txt.template /opt/ComfyUI/extra_args.txt.template
 
 COPY --chmod=755 start.sh /start.sh
 CMD ["/start.sh"]

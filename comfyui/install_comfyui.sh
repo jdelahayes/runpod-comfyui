@@ -2,7 +2,7 @@
 set -e  # Exit the script if any statement returns a non-true return value
 
 COMFYUI_DIR="/opt/ComfyUI"
-COMFYUI_TAG="v0.3.64"
+COMFYUI_TAG="v0.3.65"
 
 CUSTOM_NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"

@@ -7,19 +7,23 @@ COMFYUI_DIR="/opt/ComfyUI"
 #If missing workspace volume
 mkdir -p $RP_WORKSPACE
 
-#ComfyUI extra paths
-mkdir -p $RP_WORKSPACE/models/checkpoints
-mkdir -p $RP_WORKSPACE/models/clip
-mkdir -p $RP_WORKSPACE/models/clip_vision
-mkdir -p $RP_WORKSPACE/models/configs
-mkdir -p $RP_WORKSPACE/models/controlnet
-mkdir -p $RP_WORKSPACE/models/diffusion_models
-mkdir -p $RP_WORKSPACE/models/unet
-mkdir -p $RP_WORKSPACE/models/embeddings
-mkdir -p $RP_WORKSPACE/models/loras
-mkdir -p $RP_WORKSPACE/models/upscale_models
-mkdir -p $RP_WORKSPACE/models/vae
-mkdir -p $RP_WORKSPACE/models/text_encoders
+#ComfyUI directories
+mkdir -p \
+    $RP_WORKSPACE/models/checkpoints \
+    $RP_WORKSPACE/models/clip \
+    $RP_WORKSPACE/models/clip_vision \
+    $RP_WORKSPACE/models/configs \
+    $RP_WORKSPACE/models/controlnet \
+    $RP_WORKSPACE/models/diffusion_models \
+    $RP_WORKSPACE/models/unet \
+    $RP_WORKSPACE/models/embeddings \
+    $RP_WORKSPACE/models/loras \
+    $RP_WORKSPACE/models/upscale_models \
+    $RP_WORKSPACE/models/vae \
+    $RP_WORKSPACE/models/text_encoders \
+    $RP_WORKSPACE/input \
+    $RP_WORKSPACE/output \
+    $RP_WORKSPACE/user
 
 echo "Starting Jupyter Lab on port 8888..."
 nohup jupyter lab \
@@ -44,8 +48,7 @@ fi
 
 # Start ComfyUI with custom arguments if provided
 cd $COMFYUI_DIR
-FIXED_ARGS="--listen 0.0.0.0 --port 8188 --disable-auto-launch --use-sage-attention" 
-#--output-directory --input-directory --user-directory --temp-directory --base-directory --extra-model-paths-config
+FIXED_ARGS="--listen 0.0.0.0 --port 8188 --disable-auto-launch --use-sage-attention --output-directory $RP_WORKSPACE/output --input-directory $RP_WORKSPACE/input --user-directory $RP_WORKSPACE/user" 
 
 if [ -s "$ARGS_FILE" ]; then
     # File exists and is not empty, combine fixed args with custom args

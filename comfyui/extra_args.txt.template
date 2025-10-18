@@ -1,5 +1,3 @@
-usage: main.py 
--h
 --listen [IP]
 --port PORT
 --tls-keyfile TLS_KEYFILE
@@ -31,7 +29,7 @@ usage: main.py
 --cache-classic | --cache-lru CACHE_LRU | --cache-none
 --use-split-cross-attention | --use-quad-cross-attention | --use-pytorch-cross-attention | --use-sage-attention | --use-flash-attention
 --disable-xformers
---force-upcast-attention | --dont-upcast-attention]
+--force-upcast-attention | --dont-upcast-attention
 --gpu-only | --highvram | --normalvram | --lowvram | --novram | --cpu
 --reserve-vram RESERVE_VRAM
 --async-offload
@@ -39,7 +37,7 @@ usage: main.py
 --default-hashing-function {md5,sha1,sha256,sha512}
 --disable-smart-memory
 --deterministic
---fast [FAST ...]]
+--fast [FAST ...]
 --mmap-torch-files
 --disable-mmap
 --dont-print-server
@@ -49,7 +47,7 @@ usage: main.py
 --disable-all-custom-nodes
 --whitelist-custom-nodes WHITELIST_CUSTOM_NODES [WHITELIST_CUSTOM_NODES ...]
 --disable-api-nodes
---multi-user]
+--multi-user
 --verbose [{DEBUG,INFO,WARNING,ERROR,CRITICAL}]
 --log-stdout
 --front-end-version FRONT_END_VERSION
