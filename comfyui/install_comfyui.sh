@@ -12,6 +12,8 @@ CUSTOM_NODES=(
     "https://github.com/yolain/ComfyUI-Easy-Use"
     "https://github.com/pythongosssss/ComfyUI-Custom-Scripts"
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
+    "https://github.com/rgthree/rgthree-comfy"
+    "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
 )
 
 # Clone ComfyUI if not present
