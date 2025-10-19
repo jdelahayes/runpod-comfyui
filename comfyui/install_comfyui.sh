@@ -55,7 +55,7 @@ for node_dir in $COMFYUI_DIR/custom_nodes/*; do
         # Check for install.py
         if [ -f "install.py" ]; then
             echo "Running install.py for $node_dir ..."
-            python install.py
+            python3.12 install.py
         fi
         
         # Check for setup.py

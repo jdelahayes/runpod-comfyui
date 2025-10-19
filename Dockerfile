@@ -60,13 +60,14 @@ RUN pip install --no-cache-dir \
     && pip cache purge
 
 #FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04 AS build_sageattention
-FROM base AS build_sageattention
-COPY sageattention/force_target_12.0.patch /sageattention/force_target.patch
-COPY --chmod=755 sageattention/build_sageattention.sh /sageattention/build_sageattention.sh
-RUN /sageattention/build_sageattention.sh
+#FROM base AS build_sageattention
+#COPY sageattention/force_target_12.0.patch /sageattention/force_target.patch
+#COPY --chmod=755 sageattention/build_sageattention.sh /sageattention/build_sageattention.sh
+#RUN /sageattention/build_sageattention.sh
 
 FROM base AS comfyui
-COPY --from=build_sageattention /sageattention/SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
+#COPY --from=build_sageattention /sageattention/SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
+COPY sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 RUN pip install --no-cache-dir /sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl
 
 #Install ComfyUI and custom nodes
