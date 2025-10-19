@@ -25,6 +25,9 @@ mkdir -p \
     $RP_WORKSPACE/output \
     $RP_WORKSPACE/user
 
+#Failed to initialize database -> https://github.com/comfyanonymous/ComfyUI/issues/8764
+ln -s $RP_WORKSPACE/user $COMFYUI_DIR/user
+
 echo "Starting Jupyter Lab on port 8888..."
 nohup jupyter lab \
     --allow-root \
