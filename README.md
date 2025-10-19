@@ -22,6 +22,7 @@
 [ComfyUI-VideoHelperSuite](https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite)  
 [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)  
 [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack)  
+[ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)
 
 ## Build
 

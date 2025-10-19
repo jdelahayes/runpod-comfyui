@@ -14,6 +14,7 @@ CUSTOM_NODES=(
     "https://github.com/Kosinkadink/ComfyUI-VideoHelperSuite"
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
+    "https://github.com/city96/ComfyUI-GGUF"
 )
 
 # Clone ComfyUI if not present
