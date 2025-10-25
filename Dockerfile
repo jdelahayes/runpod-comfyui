@@ -55,7 +55,7 @@ RUN pip install --no-cache-dir \
     gdown ipykernel \
     jupyterlab jupyterlab-lsp jupyter-server jupyter-server-terminals jupyterlab_code_formatter \
     GitPython numpy pillow opencv-python diffusers huggingface_hub[cli] ninja onnx \
-    && pip install --no-cache-dir torch torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 \
+    && pip install --no-cache-dir torch==2.8.0 torchvision torchaudio --index-url https://download.pytorch.org/whl/cu128 \
     && pip install --no-cache-dir https://github.com/mjun0812/flash-attention-prebuild-wheels/releases/download/v0.4.11/flash_attn-2.8.3+cu128torch2.8-cp312-cp312-linux_x86_64.whl \
     && pip cache purge
 
@@ -64,6 +64,11 @@ RUN pip install --no-cache-dir \
 #COPY sageattention/force_target_12.0.patch /sageattention/force_target.patch
 #COPY --chmod=755 sageattention/build_sageattention.sh /sageattention/build_sageattention.sh
 #RUN /sageattention/build_sageattention.sh
+
+#FROM nvidia/cuda:12.8.1-cudnn-devel-ubuntu24.04 AS build_flashattention
+#FROM base AS build_flashattention
+#COPY --chmod=755 flashattention/build_flashattention.sh /flashattention/build_flashattention.sh
+#RUN /flashattention/build_flashattention.sh
 
 FROM base AS comfyui
 #COPY --from=build_sageattention /sageattention/SageAttention/dist/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl /sageattention/sageattention-2.2.0-cp312-cp312-linux_x86_64.whl

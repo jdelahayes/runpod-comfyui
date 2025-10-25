@@ -2,7 +2,7 @@
 set -e  # Exit the script if any statement returns a non-true return value
 
 COMFYUI_DIR="/opt/ComfyUI"
-COMFYUI_TAG="v0.3.65"
+COMFYUI_TAG="v0.3.66"
 
 CUSTOM_NODES=(
     "https://github.com/kijai/ComfyUI-KJNodes"
@@ -15,6 +15,8 @@ CUSTOM_NODES=(
     "https://github.com/rgthree/rgthree-comfy"
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/city96/ComfyUI-GGUF"
+    "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
+
 )
 
 # Clone ComfyUI if not present
@@ -32,7 +34,11 @@ for repo in "${CUSTOM_NODES[@]}"; do
     repo_name=$(basename "$repo")
     echo "Cloning $repo_name ..."
     cd "$COMFYUI_DIR/custom_nodes"
-    git clone --depth 1 "$repo"
+    if [ $repo == "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler" ]; then
+        git clone --depth 1 --branch nightly --single-branch "$repo"
+    else
+        git clone --depth 1 "$repo"
+    fi
 done
 
 # Install comfyUI requirements

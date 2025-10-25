@@ -7,7 +7,8 @@
 | **Ubuntu** | 24.04 ||
 | **Python** | 3.12 ||
 | **CUDA** | 12.8 ||
-| **COMFYUI** | v0.3.65 ||
+| **torch** | 2.8.0 ||
+| **COMFYUI** | v0.3.66 ||
 | **Sage Attention** | latest at build time | Compiled for 12.0 Architecture (RTX5090) by default (see Dockerfile)|
 | **Jupyter Labs** | latest at build time ||
 
@@ -23,6 +24,7 @@
 [rgthree-comfy](https://github.com/rgthree/rgthree-comfy)  
 [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack)  
 [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)
+[ComfyUI-SeedVR2_VideoUpscaler (nightly)](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler)
 
 ## Build
 
