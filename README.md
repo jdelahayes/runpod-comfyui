@@ -25,11 +25,13 @@
 [ComfyUI-Impact-Pack](https://github.com/ltdrdata/ComfyUI-Impact-Pack)  
 [ComfyUI-GGUF](https://github.com/city96/ComfyUI-GGUF)
 [ComfyUI-SeedVR2_VideoUpscaler (nightly)](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler)
+[ComfyUI-mxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)
+[ComfyUI-basic_data_handling](https://github.com/StableLlama/ComfyUI-basic_data_handling)
 
 ## Build
 
 ```
-docker buildx build --progress=plain -f Dockerfile -t jdelahayes/runpod-comfyui:latest .
+docker buildx build --progress=plain -f Dockerfile -t jdelahayes/runpod-comfyui:latest -t jdelahayes/runpod-comfyui:vx.x.x .
 ```
 
 ## Usage

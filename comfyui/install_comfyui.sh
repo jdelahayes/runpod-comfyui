@@ -16,7 +16,8 @@ CUSTOM_NODES=(
     "https://github.com/ltdrdata/ComfyUI-Impact-Pack"
     "https://github.com/city96/ComfyUI-GGUF"
     "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
-
+    "https://github.com/Smirnov75/ComfyUI-mxToolkit"
+    "https://github.com/StableLlama/ComfyUI-basic_data_handling"
 )
 
 # Clone ComfyUI if not present
@@ -24,16 +25,19 @@ echo "Cloning ComfyUI ..."
 mkdir -p "$COMFYUI_DIR"
 git clone --depth 1 -b $COMFYUI_TAG https://github.com/comfyanonymous/ComfyUI.git $COMFYUI_DIR
 
-# Install ComfyUI-Manager
+# Clone ComfyUI-Manager
 echo "Cloning ComfyUI-Manager ..."
 mkdir -p "$COMFYUI_DIR/custom_nodes"
 cd "$COMFYUI_DIR/custom_nodes"
 git clone --depth 1 -b main https://github.com/ltdrdata/ComfyUI-Manager.git
 
+# Clone custom nodes
+echo "Cloning custom nodes ..."
+cd "$COMFYUI_DIR/custom_nodes"
 for repo in "${CUSTOM_NODES[@]}"; do
     repo_name=$(basename "$repo")
     echo "Cloning $repo_name ..."
-    cd "$COMFYUI_DIR/custom_nodes"
+    # Clone a specific branch for SeedVR2
     if [ $repo == "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler" ]; then
         git clone --depth 1 --branch nightly --single-branch "$repo"
     else
@@ -44,7 +48,7 @@ done
 # Install comfyUI requirements
 echo "Install ComfyUI requirements ..."
 cd "$COMFYUI_DIR"
-pip install --no-cache-dir -r requirements.txt
+pip install -r requirements.txt
 
 # Install custom nodes
 for node_dir in $COMFYUI_DIR/custom_nodes/*; do
@@ -56,7 +60,7 @@ for node_dir in $COMFYUI_DIR/custom_nodes/*; do
         # Check for requirements.txt
         if [ -f "requirements.txt" ]; then
             echo "Installing requirements.txt for $node_dir ..."
-            pip install --no-cache-dir -r requirements.txt
+            pip install -r requirements.txt
         fi
         
         # Check for install.py
@@ -68,9 +72,11 @@ for node_dir in $COMFYUI_DIR/custom_nodes/*; do
         # Check for setup.py
         if [ -f "setup.py" ]; then
             echo "Running setup.py for $node_dir ..."
-            pip install --no-cache-dir -e .
+            pip install -e .
         fi
+
     fi
+
 done
 
 pip cache purge

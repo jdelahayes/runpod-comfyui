@@ -12,11 +12,6 @@ ENV RP_WORKSPACE=/workspace
 # Override the default huggingface cache directory.
 ENV HF_HOME="${RP_WORKSPACE}/.cache/huggingface/"
 
-# Shared python package cache
-ENV VIRTUALENV_OVERRIDE_APP_DATA="${RP_WORKSPACE}/.cache/virtualenv/"
-ENV PIP_CACHE_DIR="${RP_WORKSPACE}/.cache/pip/"
-ENV UV_CACHE_DIR="${RP_WORKSPACE}/.cache/uv/"
-
 # Faster transfer of models from the hub to the container
 ENV HF_HUB_ENABLE_HF_TRANSFER=1
 ENV HF_XET_HIGH_PERFORMANCE=1
