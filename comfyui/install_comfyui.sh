@@ -18,6 +18,8 @@ CUSTOM_NODES=(
     "https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler"
     "https://github.com/Smirnov75/ComfyUI-mxToolkit"
     "https://github.com/StableLlama/ComfyUI-basic_data_handling"
+    "https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes"
+    "https://github.com/ClownsharkBatwing/RES4LYF"
 )
 
 # Clone ComfyUI if not present

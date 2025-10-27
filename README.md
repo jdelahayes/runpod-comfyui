@@ -10,6 +10,7 @@
 | **torch** | 2.8.0 ||
 | **COMFYUI** | v0.3.66 ||
 | **Sage Attention** | latest at build time | Compiled for 12.0 Architecture (RTX5090) by default (see Dockerfile)|
+| **FlashAttention**|v2.8.3||
 | **Jupyter Labs** | latest at build time ||
 
 ## COMFYUI CUSTOM NODES
@@ -27,6 +28,8 @@
 [ComfyUI-SeedVR2_VideoUpscaler (nightly)](https://github.com/numz/ComfyUI-SeedVR2_VideoUpscaler)  
 [ComfyUI-mxToolkit](https://github.com/Smirnov75/ComfyUI-mxToolkit)  
 [ComfyUI-basic_data_handling](https://github.com/StableLlama/ComfyUI-basic_data_handling)  
+[ComfyUI_Comfyroll_CustomNodes](https://github.com/Suzie1/ComfyUI_Comfyroll_CustomNodes)  
+[RES4LYF](https://github.com/ClownsharkBatwing/RES4LYF)  
 
 ## Build
 
