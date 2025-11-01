@@ -50,7 +50,7 @@ done
 # Install comfyUI requirements
 echo "Install ComfyUI requirements ..."
 cd "$COMFYUI_DIR"
-pip install -r requirements.txt
+uv pip install --system --no-cache-dir -r requirements.txt
 
 # Install custom nodes
 for node_dir in $COMFYUI_DIR/custom_nodes/*; do
@@ -62,7 +62,7 @@ for node_dir in $COMFYUI_DIR/custom_nodes/*; do
         # Check for requirements.txt
         if [ -f "requirements.txt" ]; then
             echo "Installing requirements.txt for $node_dir ..."
-            pip install -r requirements.txt
+            uv pip install --system --no-cache-dir -r requirements.txt
         fi
         
         # Check for install.py
@@ -82,3 +82,4 @@ for node_dir in $COMFYUI_DIR/custom_nodes/*; do
 done
 
 pip cache purge
+uv cache clean
