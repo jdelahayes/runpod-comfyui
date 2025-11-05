@@ -1,3 +1,4 @@
 workspace
 run.sh
 build.sh
+build.log

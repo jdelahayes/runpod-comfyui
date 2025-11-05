@@ -8,7 +8,7 @@
 | **Python** | 3.12 ||
 | **CUDA** | 12.8 ||
 | **torch** | 2.8.0 ||
-| **COMFYUI** | v0.3.66 ||
+| **COMFYUI** | v0.3.68 ||
 | **Sage Attention** | latest at build time | Compiled for 12.0 Architecture (RTX5090) by default (see Dockerfile)|
 | **FlashAttention**|v2.8.3||
 | **Jupyter Labs** | latest at build time ||
